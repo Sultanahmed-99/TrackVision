@@ -24,3 +24,12 @@ class PreaperBaseModelConfig:
     params_num_classes : int
     params_weights : str 
     params_learning_rate : float
+
+
+
+@dataclass(frozen=True)
+class PreaperModelCallBacks:
+    root_dir : Path 
+    tensrboard_root_log_dir: Path
+    checkpoint_model_filepath: Path
+     

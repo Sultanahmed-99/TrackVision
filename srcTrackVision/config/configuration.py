@@ -1,6 +1,7 @@
 from srcTrackVision.utils.common import read_yaml ,  create_directories
 from srcTrackVision.entity.config_entity import (DataIngestionConfig 
-                                                 , PreaperBaseModelConfig)
+                                                 , PreaperBaseModelConfig
+                                                  , PreaperModelCallBacks)
 from pathlib import Path
 
 
@@ -51,6 +52,25 @@ class ConfigurationManager:
              
 
         )
+        
 
     
         return preaper_base_model_config
+    
+    def get_preaper_model_callbacks_config(self) -> PreaperModelCallBacks:
+        config = self.config.preaper_callbacks
+        model_chpt_dir = os.path.dirname(config.checkpoint_model_filepath)
+        create_directories([
+            Path(model_chpt_dir) ,
+            Path(config.tensrboard_root_log_dir)
+        ])
+        preaper_model_callbacks_config = PreaperModelCallBacks(
+            root_dir= Path(config.root_dir),
+            tensrboard_root_log_dir = Path(config.tensrboard_root_log_dir),
+            checkpoint_model_filepath = Path(config.checkpoint_model_filepath)
+             
+
+        )
+
+    
+        return preaper_model_callbacks_config
