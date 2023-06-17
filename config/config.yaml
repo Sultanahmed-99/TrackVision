@@ -1,0 +1,11 @@
+
+# Trying this on face experssion data 
+artifacts_root: /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts 
+
+data_ingestion : 
+    root_dir : /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/data_ingestion
+    source_url : https://github.com/Sultanahmed-99/TrackVision/raw/main/archive%202.zip
+    local_data_file : /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/data_ingestion/data.zip
+    unzip_file : /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/data_ingestion
+      
+  
