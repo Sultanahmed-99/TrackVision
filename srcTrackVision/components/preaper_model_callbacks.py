@@ -1,6 +1,8 @@
 import time 
 import tensorflow as tf 
-from srcTrackVision.config.configuration import PreaperModelCallBacks 
+from srcTrackVision.entity.config_entity import PreaperModelCallBacks 
+import os 
+
 
 class PreaperCallBacks:
     def __init__ (self  , config = PreaperModelCallBacks):

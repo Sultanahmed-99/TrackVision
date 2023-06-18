@@ -1,9 +1,8 @@
 from srcTrackVision import logger
 from srcTrackVision.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from srcTrackVision.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
-
-
-
+from srcTrackVision.pipeline.stage_03_model_training import ModelTrainingPipeline
+ 
  
 STAGE_NAME = 'Data Ingestion Stage'
 try:
@@ -26,3 +25,15 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e 
+
+STAGE_NAME = 'Training'
+try:
+    logger.info(f'>>>>  stage : {STAGE_NAME} Started <<<<')
+    obj = ModelTrainingPipeline()
+    obj.main()
+    logger.info(f'>>>>  stage : {STAGE_NAME} Completed <<<< \n\nx=========x')
+
+except Exception as e:
+    logger.exception(e)
+    raise e 
+    

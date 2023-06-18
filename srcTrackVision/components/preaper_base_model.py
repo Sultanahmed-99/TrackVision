@@ -3,7 +3,7 @@ import tensorflow as tf
 from srcTrackVision.entity.config_entity import PreaperBaseModelConfig
 from pathlib import Path
 
-class PreaperBaseModel():
+class PreaperBaseModel:
     def __init__ (self  , config = PreaperBaseModelConfig):
         self.config = config
 

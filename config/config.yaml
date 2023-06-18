@@ -22,3 +22,10 @@ preaper_callbacks :
     tensrboard_root_log_dir : /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/preaper_callbacks/tensorboard_log_dir
     checkpoint_model_filepath: /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/checkpoint_dir/model.h5
 
+
+
+training : 
+    root_dir :  /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/training
+    trained_model_path : /Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/training/model.h5
+    
+
