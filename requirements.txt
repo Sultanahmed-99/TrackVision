@@ -1,8 +1,17 @@
-dvc 
+tensorflow
+pandas 
+dvc
+notebook
+numpy
+matplotlib
+seaborn
 python-box==6.0.2
-pyYAML 
+pyYAML
+tqdm
 ensure==1.0.2
-joblib 
+joblib
 types-PyYAML
-Flask-Cors 
--e . 
+scipy
+Flask
+Flask-Cors
+-e .
