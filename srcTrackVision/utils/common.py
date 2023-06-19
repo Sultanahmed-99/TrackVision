@@ -78,5 +78,20 @@ def get_size(path : Path) -> str :
 
 
 
+def decode_image(image_string  , filename) :
+    """
+    decode an image from webapp turn image string into file object
+    
+    Args:
+        image_string (str) : image string
+        filename (str) : filename of the image
+    """
+    
+    image_data = base64.b64decode(image_string)
+    with open(filename , 'wb') as f:
+        f.write(image_data)
+        f.close()
+        logger.info(f'image {filename} saved successfully')
+        
 
 
