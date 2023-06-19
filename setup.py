@@ -8,7 +8,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "TrackVision"
 AUTHOR_USER_NAME = "Sultanahmed-99"
-SRC_REPO = "srcTrackVision"  
+SRC_REPO = "TrackVision"  
 AUTHOR_EMAIL = "sultanworker@gmail.com"
 
 
