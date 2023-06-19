@@ -1,6 +1,6 @@
+from pathlib import Path
 from srcTrackVision.entity.config_entity import TrainingConfig
 import tensorflow as tf 
-from pathlib import Path
 
 
 class Training:
@@ -21,7 +21,7 @@ class Training:
         dataflow_kwargs = dict(
             target_size = self.config.params_image_size[:-1],
             batch_size = self.config.params_batch_size,
-            interpolation = 'bilinear'
+            interpolation = 'bilinear',
         )
 
         valid_generator = tf.keras.preprocessing.image.ImageDataGenerator(
@@ -77,6 +77,3 @@ class Training:
            , model = self.model
            
         )
-
-
-        

@@ -57,7 +57,7 @@ def create_directories(path: list, verbose=True):
 
 
 @ensure_annotations
-def save_json(path : str, data : dict):
+def save_json(path : Path, data : dict):
     """save json data
     
     Args : 

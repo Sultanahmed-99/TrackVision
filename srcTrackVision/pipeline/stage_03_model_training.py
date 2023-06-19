@@ -1,12 +1,14 @@
  
 from srcTrackVision.config.configuration import ConfigurationManager
 from srcTrackVision import logger
+
+
 from srcTrackVision.components.training import Training
 from srcTrackVision.components.preaper_model_callbacks import PreaperCallBacks
 
 STAGE_NAME = 'Training'
 
-class ModelTrainingPipeline:
+class TrainingPipeline:
     def __init__(self) :
         pass
 
@@ -31,7 +33,7 @@ class ModelTrainingPipeline:
 if __name__ == "__main__":
     try:
         logger.info(f'>>>>  stage : {STAGE_NAME} Started <<<<')
-        obj = ModelTrainingPipeline()
+        obj = TrainingPipeline()
         obj.main()
         logger.info(f'>>>>  stage : {STAGE_NAME} Completed <<<< \n\nx=========x')
 

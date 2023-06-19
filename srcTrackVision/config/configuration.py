@@ -1,11 +1,17 @@
+
 from srcTrackVision.utils.common import read_yaml ,  create_directories
+
 from srcTrackVision.entity.config_entity import (DataIngestionConfig 
                                                  , PreaperBaseModelConfig
                                                   , PreaperModelCallBacks
-                                                  )
-from srcTrackVision.entity.config_entity import TrainingConfig
+                                                  , TrainingConfig
+                                                  , ModelEvaluationConfig)
 from pathlib import Path
+
 import os 
+
+
+
 
 class ConfigurationManager:
     def __init__(
@@ -99,3 +105,13 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+    def get_validation_config(self) -> ModelEvaluationConfig:
+        eval_config = ModelEvaluationConfig(
+            path_of_model= '/Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/training/model.h5'
+            , training_data= '/Users/sultanalyami/Desktop/TrackVision_Project/TrackVision/artifacts/data_ingestion/archive/CK+48'
+            , all_params = self.params
+            , params_image_size= self.params.IMAGE_SIZE
+            , params_batch_size= self.params.BATCH_SIZE
+        )
+        return eval_config

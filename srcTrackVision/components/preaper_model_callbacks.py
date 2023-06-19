@@ -3,7 +3,6 @@ import tensorflow as tf
 from srcTrackVision.entity.config_entity import PreaperModelCallBacks 
 import os 
 
-
 class PreaperCallBacks:
     def __init__ (self  , config = PreaperModelCallBacks):
         self.config = config
