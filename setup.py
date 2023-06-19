@@ -1,43 +1,29 @@
-from setuptools import setup, find_packages
-from typing import List
+import setuptools
+
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
 
 
-HYPEN_E_DOT = '-e .'
-def get_requirements(filepath : str) -> List[str]:
-    """Get requirements from a file."""
+__version__ = "0.0.0"
 
-    requirements = []
-
-    with open(filepath) as file_obj : 
-        requirements = file_obj.readlines()
-
-        requirements = [req.replace('\'n' , "") for req in requirements]
-        requirements 
-
-        if HYPEN_E_DOT in requirements:
-            requirements.remove(HYPEN_E_DOT)
-
-    return requirements
+REPO_NAME = "TrackVision"
+AUTHOR_USER_NAME = "Sultanahmed-99"
+SRC_REPO = "srcTrackVision"  
+AUTHOR_EMAIL = "sultanworker@gmail.com"
 
 
-setup(
- # metadata
-name= "TrackVision" ,
-version= '0.0.0' , 
-author= 'Sultanahmed-99' , 
-author_email='sultanworker@gmail.com' , 
-packages= find_packages() , 
-install_requires = get_requirements('requirements.txt') , 
-
+setuptools.setup(
+    name=SRC_REPO,
+    version=__version__,
+    author=AUTHOR_USER_NAME,
+    author_email=AUTHOR_EMAIL,
+    description="A small python package for CNN app",
+    long_description=long_description,
+    long_description_content="text/markdown",
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
+    project_urls={
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+    },
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src")
 )
-
-# This code block sets up the metadata
-#  for the project, including the project name,
-#   version number, author, author email,
-#   and required packages. The 'find_packages' 
-#   function is used to automatically detect and 
-#   include all project packages. 
-#   The 'install_requires'
-#    argument specifies 
-#    the required packages that need to be installed 
-#    in order to run the project successfully.
