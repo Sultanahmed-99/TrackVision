@@ -1,6 +1,7 @@
-FROM python:3.8
+FROM python:3.8-slim-buster 
 
-RUN apt update -y && apt install aswcli -y 
+RUN apt update -y && apt install awscli -y
+
 WORKDIR /app 
 
 
