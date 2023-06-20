@@ -20,3 +20,5 @@ COPY --from=builder /opt/venv /opt/venv
 WORKDIR /app
 
 ENV PATH="/opt/venv/bin:$PATH"
+
+CMD ["python3" , 'app.py']
