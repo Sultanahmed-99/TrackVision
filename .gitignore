@@ -160,3 +160,7 @@ cython_debug/
 #.idea/
 
 artifacts/*
+ 
+
+ggml-gpt4all-j-v1.3-groovy.bin
+research/000_llm.ipynb
