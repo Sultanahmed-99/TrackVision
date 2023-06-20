@@ -1,11 +1,22 @@
-FROM python:3.8.16-slim-buster 
+# Temporary stage
+FROM python:3.8.16-slim-buster as builder
+WORKDIR /app
 
-RUN apt update -y && apt install awscli -y
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-WORKDIR /app 
+RUN apt-get update && apt-get install awscli -y 
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
-
-COPY . /app 
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-CMD ["python3", "app.py"]
+# Final stage
+FROM python:3.8.16-slim-buster
+
+COPY --from=builder /opt/venv /opt/venv
+
+WORKDIR /app
+
+ENV PATH="/opt/venv/bin:$PATH"
